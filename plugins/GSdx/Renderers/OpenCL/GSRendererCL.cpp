@@ -1453,7 +1453,7 @@ bool GSRendererCL::SetupParameter(TFXJob* job, TFXParameter* pb, GSVertexCL* ver
 
 			bool mipmap = IsMipMapActive();
 
-			GIFRegTEX0 TEX0 = m_context->GetSizeFixedTEX0(s_n, m_vt.m_min.t.xyxy(m_vt.m_max.t), m_vt.IsLinear(), mipmap);
+			GIFRegTEX0 TEX0 = m_context->m_TEX0;
 
 			GSVector4i r;
 
@@ -1462,7 +1462,7 @@ bool GSRendererCL::SetupParameter(TFXJob* job, TFXParameter* pb, GSVertexCL* ver
 			GSVector4i* src_pages = job->GetSrcPages();
 
 			GSOffset* o = m_mem.GetOffset(context->TEX0.TBP0, context->TEX0.TBW, context->TEX0.PSM);
-			
+
 			o->GetPagesAsBits(r, m_tmp_pages);
 
 			for(int i = 0; i < 4; i++)
