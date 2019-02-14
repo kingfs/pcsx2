@@ -515,7 +515,7 @@ void GSTextureOGL::GenerateMipmap()
 	}
 }
 
-void GSTextureOGL::CommmitPages(const GSVector2i& region, bool commit)
+void GSTextureOGL::CommitPages(const GSVector2i& region, bool commit)
 {
 	GLState::available_vram += m_mem_usage;
 

@@ -46,7 +46,7 @@ void GSTexture::CommitRegion(const GSVector2i& region)
 	aligned_region.x = std::max(m_committed_size.x, aligned_region.x);
 	aligned_region.y = std::max(m_committed_size.y, aligned_region.y);
 	if (aligned_region != m_committed_size)
-		CommmitPages(aligned_region, true);
+		CommitPages(aligned_region, true);
 }
 
 void GSTexture::Commit()
@@ -55,7 +55,7 @@ void GSTexture::Commit()
 		return;
 
 	if (m_committed_size != m_size)
-		CommmitPages(m_size, true);
+		CommitPages(m_size, true);
 }
 
 void GSTexture::Uncommit()
@@ -66,7 +66,7 @@ void GSTexture::Uncommit()
 	GSVector2i zero = GSVector2i(0, 0);
 
 	if (m_committed_size != zero)
-		CommmitPages(m_committed_size, false);
+		CommitPages(m_committed_size, false);
 }
 
 void GSTexture::SetGpuPageSize(const GSVector2i& page_size)

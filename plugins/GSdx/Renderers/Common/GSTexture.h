@@ -62,7 +62,7 @@ public:
 	int GetType() const {return m_type;}
 	int GetFormat() const {return m_format;}
 
-	virtual void CommmitPages(const GSVector2i& region, bool commit) {};
+	virtual void CommitPages(const GSVector2i& region, bool commit) {};
 	void CommitRegion(const GSVector2i& region);
 	void Commit();
 	void Uncommit();
